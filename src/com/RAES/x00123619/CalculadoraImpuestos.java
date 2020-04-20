@@ -1,5 +1,7 @@
 package com.RAES.x00123619;
 
+import java.text.DecimalFormat;
+
 public final class CalculadoraImpuestos {
     private static Double totalRenta;
     private static Double totalISSS;
@@ -35,6 +37,9 @@ public final class CalculadoraImpuestos {
     }
 
     public static String mostrarTotales(){
+        totalAFP = Double.valueOf(new DecimalFormat("#.##").format(totalAFP));
+        totalISSS =Double.valueOf(new DecimalFormat("#.##").format(totalISSS));
+        totalRenta = Double.valueOf(new DecimalFormat("#.##").format(totalRenta));
         mostrar = "Renta: $"+ Double.toString(totalRenta) + " ISSS: $" + Double.toString(totalISSS) +
                 " AFP: $" + Double.toString(totalAFP);
         return mostrar;
